@@ -1,6 +1,7 @@
 // Create mongoose connection
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://omrilevi:Aa123456@cluster0.etvftjw.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+const { MONGO_URI } = require('../config');
+mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Create mongoose schema
 const productSchema = new mongoose.Schema({
